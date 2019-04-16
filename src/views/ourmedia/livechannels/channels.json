@@ -1,0 +1,157 @@
+{
+  "channels":[
+    {
+      "channelName": "hum tc",
+      "details": {
+        "ChannelID": "5c235fa225428a120b553543",
+        "streamURL": "https://www.youtube.com/Frances",
+        "enable": true,
+        "ChannelTags": [
+          "commodo",
+          "enim",
+          "quis",
+          "laboris",
+          "exercitation",
+          "irure",
+          "veniam"
+        ]
+      }
+    },
+    {
+      "channelName": "geo tv",
+      "details": {
+        "ChannelID": "5c235fa2daee92013f7bc4f8",
+        "streamURL": "https://www.youtube.com/Virgie",
+        "enable": true,
+        "ChannelTags": [
+          "mollit",
+          "cupidatat",
+          "pariatur",
+          "ad",
+          "ad",
+          "id",
+          "ad"
+        ]
+      }
+    },
+    {
+      "channelName": "Jackson Washington",
+      "details": {
+        "ChannelID": "5c235fa2ce8d233addafc374",
+        "enable": false,
+        "streamURL": "https://www.youtube.com/York",
+        "ChannelTags": [
+          "elit",
+          "magna",
+          "ea",
+          "ea",
+          "irure",
+          "adipisicing",
+          "dolore"
+        ]
+      }
+    },
+    {
+      "channelName": "Foley Perkins",
+      "details": {
+        "ChannelID": "5c235fa277cf6d57b0332ce9",
+        "enable": true,
+        "streamURL": "https://www.youtube.com/Rosa",
+        "ChannelTags": [
+          "ullamco",
+          "reprehenderit",
+          "velit",
+          "anim",
+          "pariatur",
+          "aliquip",
+          "esse"
+        ]
+      }
+    },
+    {
+      "channelName": "Valerie Koch",
+      "details": {
+        "ChannelID": "5c235fa207fa9deac6cba50d",
+        "streamURL": "https://www.youtube.com/Evelyn",
+        "enable": false,
+        "ChannelTags": [
+          "enim",
+          "veniam",
+          "dolor",
+          "veniam",
+          "amet",
+          "mollit",
+          "minim"
+        ]
+      }
+    },
+    {
+      "channelName": "Dorsey Adams",
+      "details": {
+        "ChannelID": "5c235fa21ed788d53a357da0",
+        "enable": false,
+        "streamURL": "https://www.youtube.com/Jenkins",
+        "ChannelTags": [
+          "consectetur",
+          "sit",
+          "proident",
+          "nulla",
+          "aute",
+          "laborum",
+          "laborum"
+        ]
+      }
+    },
+    {
+      "channelName": "Maribel Fitzpatrick",
+      "details": {
+        "ChannelID": "5c235fa216f89675792af8df",
+        "enable": true,
+        "streamURL": "https://www.youtube.com/Rosella",
+        "ChannelTags": [
+          "enim",
+          "tempor",
+          "amet",
+          "nisi",
+          "officia",
+          "cupidatat",
+          "minim"
+        ]
+      }
+    },
+    {
+      "channelName": "Ada Harmon",
+      "details": {
+        "ChannelID": "5c235fa2c1af6dd059a739a7",
+        "enable": true,
+        "streamURL": "https://www.youtube.com/Bryan",
+        "ChannelTags": [
+          "officia",
+          "duis",
+          "fugiat",
+          "veniam",
+          "deserunt",
+          "cillum",
+          "pariatur"
+        ]
+      }
+    },
+    {
+      "channelName": "Goodman Conrad",
+      "details": {
+        "ChannelID": "5c235fa24d92c2fd7e351c2a",
+        "streamURL": "https://www.youtube.com/Cheri",
+        "enable": true,
+        "ChannelTags": [
+          "nisi",
+          "cillum",
+          "magna",
+          "aliqua",
+          "exercitation",
+          "proident",
+          "ut"
+        ]
+      }
+    }
+  ]
+}
