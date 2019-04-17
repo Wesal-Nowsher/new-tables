@@ -41,12 +41,23 @@ class dramaList extends React.Component{
             active2: "ok",
             active3: "ok",
             active4: "ok",
-            activepage:1
+            activepage:1,
+            selectrows:"",
+            selectedrows:[]
         };
     }
-    pagenum(val){
+    selectallrows(){
+        if(this.state.selectrows===""){
+            this.setState({selectrows:'backblue', selectedrows: this.state.infinitedata})
+        }else{
+            this.setState({selectrows:'', selectedrows: []})
+        }
+    }
+    selectOneRow(val){
+        this.setState({selectrows:'backblue', selectedrows: this.state.infinitedata[val]});
 
-        console.log("wesal for paginations")
+    }
+    pagenum(val){
         switch(val){
             case "prev":
                 if(this.state.active1 !== "active"){
@@ -63,7 +74,6 @@ class dramaList extends React.Component{
         }
     }
     pagenumbering(number){
-        console.log("prev clicked",number)
         switch(number){
             case 1:
             let newarray=[];
@@ -100,14 +110,12 @@ class dramaList extends React.Component{
         }
     }
     handlePageChange(pageNumber) {
-        console.log(`active page is ${pageNumber}`);
         this.setState({activePage: pageNumber});
 
       }
 
     componentDidMount(){
         let newdata= this.state.infinitedata.sort((a, b) => {
-            console.log("this is ok",a.dramaName, b.dramaName);
              a.dramaName= a.dramaName.toLowerCase();
             b.dramaName = b.dramaName.toLowerCase();
             return (a.dramaName < b.dramaName) ? -1 : (a.dramaName > b.dramaName) ? 1 : 0;
@@ -212,6 +220,123 @@ class dramaList extends React.Component{
 
     }
 
+//////////////////////////////////
+dramareverse(){
+    if(this.state.data){
+        if(this.state.asc ==='desc'){
+            console.log("doing desc");
+            let newdata= this.state.infinitedata.sort((a, b) => {
+                console.log("this is ok",a.detail.DramaChannel, b.detail.DramaChannel);
+                a.detail.DramaChannel= a.detail.DramaChannel.toLowerCase();
+                b.detail.DramaChannel = b.detail.DramaChannel.toLowerCase();
+
+                return (a.detail.DramaChannel < b.detail.DramaChannel) ? -1 : (a.detail.DramaChannel > b.detail.DramaChannel) ? 1 : 0;
+            });
+            console.log(newdata);
+            this.setState({data: newdata, asc:'asc'});
+
+
+        }
+        else if(this.state.asc === 'asc'){
+            console.log("this is asc");
+            let newdata= this.state.infinitedata.reverse((a, b) => {
+                console.log("this is ok",a.detail.DramaChannel, b.detail.DramaChannel);
+                a.detail.DramaChannel= a.detail.DramaChannel.toLowerCase();
+                b.detail.DramaChannel = b.detail.DramaChannel.toLowerCase();
+
+                return (a.detail.DramaChannel > b.detail.DramaChannel) ? -1 : (a.detail.DramaChannel < b.detail.DramaChannel) ? 1 : 0;
+            });
+            console.log(newdata);
+            this.setState({data: newdata, asc: 'desc'});
+
+        }
+
+    }
+    if(this.state.filterdata){
+        if(this.state.asc ==='desc'){
+            console.log("doing desc");
+            let newdata= this.state.filterdata.sort((a, b) => {
+                console.log("this is ok",a.dramaName, b.dramaName);
+                a.detail.DramaChannel= a.detail.DramaChannel.toLowerCase();
+                b.detail.DramaChannel = b.detail.DramaChannel.toLowerCase();
+                return (a.detail.DramaChannel < b.detail.DramaChannel) ? -1 : (a.detail.DramaChannel > b.detail.DramaChannel) ? 1 : 0;
+            });
+            console.log(newdata);
+            this.setState({filterdata: newdata, asc:'asc'});
+        }
+        else if(this.state.asc === 'asc'){
+            console.log("this is asc");
+            let newdata= this.state.filterdata.reverse((a, b) => {
+                console.log("this is ok",a.dramaName, b.dramaName);
+                a.detail.DramaChannel= a.detail.DramaChannel.toLowerCase();
+                b.detail.DramaChannel = b.detail.DramaChannel.toLowerCase();
+                return (a.detail.DramaChannel > b.detail.DramaChannel) ? -1 : (a.detail.DramaChannel < b.detail.DramaChannel) ? 1 : 0;
+            });
+            console.log(newdata);
+            this.setState({filterdata: newdata, asc: 'desc'});
+        }
+    }
+
+}
+
+/////////////////////////////////////////
+plotreverse(){
+    if(this.state.data){
+        if(this.state.asc ==='desc'){
+            console.log("doing desc");
+            let newdata= this.state.infinitedata.sort((a, b) => {
+                a.detail.Plot= a.detail.Plot.toLowerCase();
+                b.detail.Plot = b.detail.Plot.toLowerCase();
+
+                return (a.detail.Plot < b.detail.Plot) ? -1 : (a.detail.Plot > b.detail.Plot) ? 1 : 0;
+            });
+            console.log(newdata);
+            this.setState({data: newdata, asc:'asc'});
+
+
+        }
+        else if(this.state.asc === 'asc'){
+            let newdata= this.state.infinitedata.reverse((a, b) => {
+                console.log("this is ok",a.detail.Plot, b.detail.Plot);
+                a.detail.Plot= a.detail.Plot.toLowerCase();
+                b.detail.Plot = b.detail.Plot.toLowerCase();
+
+                return (a.detail.Plot > b.detail.Plot) ? -1 : (a.detail.Plot < b.detail.Plot) ? 1 : 0;
+            });
+            console.log(newdata);
+            this.setState({data: newdata, asc: 'desc'});
+
+        }
+
+    }
+    if(this.state.filterdata){
+        if(this.state.asc ==='desc'){
+            console.log("doing desc");
+            let newdata= this.state.filterdata.sort((a, b) => {
+                a.detail.Plot= a.detail.Plot.toLowerCase();
+                b.detail.Plot = b.detail.Plot.toLowerCase();
+                return (a.detail.Plot < b.detail.Plot) ? -1 : (a.detail.Plot > b.detail.Plot) ? 1 : 0;
+            });
+            console.log(newdata);
+            this.setState({filterdata: newdata, asc:'asc'});
+        }
+        else if(this.state.asc === 'asc'){
+            let newdata= this.state.filterdata.reverse((a, b) => {
+                a.detail.Plot= a.detail.Plot.toLowerCase();
+                b.detail.Plot = b.detail.Plot.toLowerCase();
+                return (a.detail.Plot > b.detail.Plot) ? -1 : (a.detail.Plot < b.detail.Plot) ? 1 : 0;
+            });
+            console.log(newdata);
+            this.setState({filterdata: newdata, asc: 'desc'});
+        }
+    }
+
+}
+
+/////////////////////////////////////////
+
+
+
     delete(){
         console.log(this.state.deleteindex);
         for(let i = 0; i < this.state.infinitedata.length; i++) {
@@ -290,6 +415,7 @@ class dramaList extends React.Component{
                         <Card>
                             <CardHeader>
                                 <strong> Dummy Data </strong>
+                                <button className="btn" type="button" onClick={()=>{this.selectallrows()}}> Select All </button>
                                 <Input type="text" onChange={(e)=> this.filter(e.target.value)} className="input-ab" id="name" placeholder="Enter drama name" required />
                             </CardHeader>
                             <CardBody>
@@ -301,8 +427,12 @@ class dramaList extends React.Component{
                                                 <th className="widthg1">All Data <i onClick={this.reverse.bind(this)}
                                                                   className={this.state.asc === 'asc' ? 'fa fa-chevron-down cursor-pointer':
                                                                   'fa fa-chevron-up cursor-pointer'}></i></th>
-                                                <th>DataChannel </th>
-                                                <th>Plot </th>
+                                                <th>DataChannel <i onClick={this.dramareverse.bind(this)}
+                                                                  className={this.state.asc === 'asc' ? 'fa fa-chevron-down cursor-pointer':
+                                                                  'fa fa-chevron-up cursor-pointer'}></i></th>
+                                                <th>Plot <i onClick={this.plotreverse.bind(this)}
+                                                                  className={this.state.asc === 'asc' ? 'fa fa-chevron-down cursor-pointer':
+                                                                  'fa fa-chevron-up cursor-pointer'}></i></th>
                                                 <th>Enable/disable <i className={this.state.enable === 'asc' ? 'fa fa-chevron-down cursor-pointer':
                                                     'fa fa-chevron-up cursor-pointer'}
                                                 onClick={this.enablesort.bind(this)}></i></th>
@@ -313,7 +443,7 @@ class dramaList extends React.Component{
                                             {
                                                 this.state.data  && this.state.data.map((item, index)=>{
                                                     return(
-                                                        <tr key={index}>
+                                                        <tr key={index} className={item.selected ? "blue":"white"} onClick={()=>{this.selectOneRow(index)}}>
                                                             <td>
                                                                 {
                                                                     this.state.editindex === item.dramaName ? <Input type="text" defaultValue={item.dramaName} onChange={(e) => this.editfield(e.target.value)}  className=""  id="name" placeholder="Enter drama Channel"   /> : <p className="list-p">{item.dramaName}{index}</p>
